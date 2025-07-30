@@ -6,6 +6,8 @@
 // Formula: F = C * 9/5 + 32
 let celsius = 25;
 // Your code here
+let fahrenheit = celsius * 9/5 + 32;
+console.log(`Celsius: ${celsius}, Fahrenheit: ${fahrenheit}`);
 
 
 // Challenge 2: Shopping Cart
@@ -14,15 +16,32 @@ let itemPrice = 19.99;
 let quantity = 3;
 let taxRate = 0.08;
 // Your code here
+let subtotal = itemPrice * quantity;
+let total = subtotal + (subtotal * taxRate);
+console.log(`Subtotal: $${subtotal.toFixed(2)}, Total with tax: $${total.toFixed(2)}`);
 
 
 // Challenge 3: Simple Logic
 // TODO: Check if a number is even AND greater than 10
 let number = 14;
 // Your code here
+let isEvenAndGreaterThanTen = (number % 2 === 0) && (number > 10);
+console.log(`Is ${number} even and greater than 10? ${isEvenAndGreaterThanTen}`);
 
 
 // BONUS CHALLENGES
 // 1. Create a tip calculator (15%, 18%, 20% options)
+let billAmount = 50;
+let tip15 = billAmount * 0.15;
+let tip18 = billAmount * 0.18;
+let tip20 = billAmount * 0.20;
+console.log(`Bill Amount: $${billAmount.toFixed(2)}, Tip (15%): $${tip15.toFixed(2)}, Tip (18%): $${tip18.toFixed(2)}, Tip (20%): $${tip20.toFixed(2)}`);
 // 2. Check if a year is a leap year
+let year = 2025;
+let isLeapYear = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+console.log(`Is ${year} a leap year? ${isLeapYear}`);
 // 3. Calculate BMI (weight in kg / height in meters squared)
+let weight = 70; // kg
+let height = 1.75; // meters
+let bmi = weight / (height * height);
+console.log(`Weight: ${weight} kg, Height: ${height} m, BMI: ${bmi.toFixed(2)}`);
