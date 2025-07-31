@@ -3,7 +3,13 @@
 // Task 1: Find Largest Number
 // TODO: Write a function to find the largest number in an array
 function findLargest(numbers) {
-    // Your code here
+    let largest = numbers[0];
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] > largest) {
+            largest = numbers[i]; 
+        }
+    }
+    return largest;
 }
 
 // Test your function
@@ -14,7 +20,11 @@ console.log("Largest number:", findLargest(testArray1)); // Should print 9
 // Task 2: Reverse Array
 // TODO: Write a function to reverse an array without using .reverse()
 function reverseArray(arr) {
-    // Your code here
+    let reversed = [];
+    for (let i = arr.length - 1; i >= 0; i--) {
+        reversed.push(arr[i]);
+    }
+    return reversed;
 }
 
 // Test your function
@@ -25,7 +35,13 @@ console.log("Reversed array:", reverseArray(testArray2)); // Should print ["d", 
 // Task 3: Remove Duplicates
 // TODO: Write a function to remove duplicates from an array
 function removeDuplicates(arr) {
-    // Your code here
+    let uniqueElements = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (!uniqueElements.includes(arr[i])) {
+            uniqueElements.push(arr[i]);
+        }
+    }
+    return uniqueElements;
 }
 
 // Test your function

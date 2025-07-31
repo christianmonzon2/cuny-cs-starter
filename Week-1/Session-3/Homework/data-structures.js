@@ -14,35 +14,50 @@ let classRoster = [
         name: "Bob Smith",
         grade: 85,
         attendance: 92
+    },
+    {
+        id: 3,
+        name: "Duke Dennis",
+        grade: 100,
+        attendance: 95
+    },
+    {
+        id: 4,
+        name: "Kai Cenat",
+        grade: 65,
+        attendance: 92
     }
-    // Add more students here
 ];
 
 // Task 2: Roster Management Functions
 // TODO: Write a function to add a student
 function addStudent(id, name, grade, attendance) {
-    // Your code here
+    classRoster.push({ id, name, grade, attendance });
+    return classRoster;
 }
 
 // TODO: Write a function to remove a student by ID
 function removeStudent(id) {
-    // Your code here
+    classRoster = classRoster.filter(student => student.id !== id);
+    return classRoster;
 }
 
 // TODO: Write a function to calculate class average grade
 function calculateClassAverage() {
-    // Your code here
+    if (classRoster.length === 0) return 0;
+    let totalGrade = classRoster.reduce((sum, student) => sum + student.grade, 0);
+    return totalGrade / classRoster.length;
 }
 
 // Task 3: Search Functions
 // TODO: Write a function to find students by name
 function findStudentByName(name) {
-    // Your code here
+    return classRoster.filter(student => student.name.toLowerCase().includes(name.toLowerCase()));
 }
 
 // TODO: Write a function to find students with grade above certain threshold
 function findStudentsAboveGrade(threshold) {
-    // Your code here
+    return classRoster.filter(student => student.grade > threshold);
 }
 
 // Test your functions
