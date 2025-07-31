@@ -12,7 +12,6 @@ let temperatureFahrenheit = temperatureCelsius * (9 / 5) + 32;
 // console.log("Temperature conversion: ??? °C = ??? °F");
 console.log(`Temperature conversion: ${temperatureCelsius} °C = ${temperatureFahrenheit.toFixed(2)} °F`);
 
-
 // Task 2: Distance Conversion
 // TODO: Convert miles to kilometers
 // Formula: 1 mile = 1.60934 kilometers
