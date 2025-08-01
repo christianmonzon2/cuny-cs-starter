@@ -3,38 +3,50 @@
 
 // Task 1: Create variables for different data types
 // TODO: Create a string variable for your name
-const fname="Christian";
-console.log(typeof fname);
+let myName = "Christian";
 
 // TODO: Create a number variable for your age
-const age = 18;
-console.log(typeof age);
+let age = 18;
 
 // TODO: Create a boolean variable for whether you're a student
-const isStudent = true;
-console.log(typeof isStudent);
+let isStudent = true;
 
 // Task 2: Print variables to console
 // TODO: Use console.log() to display each variable
-console.log(fname);
+console.log(myName);
 console.log(age);
 console.log(isStudent);
 
 // Task 3: Experiment with typeof operator
 // TODO: Check the type of each variable using typeof
-console.log(typeof fname);
-console.log(typeof age);
-console.log(typeof isStudent);
+console.log("The type of variable myName is a " + typeof myName);
+console.log("The type of variable age is a " + typeof age);
+console.log("The type of variable isStudent is a " + typeof isStudent);
 
 // BONUS CHALLENGES
 // 1. Create a variable that holds your favorite quote
-const favoriteQuote = "xyz";
+let favoriteQuote = "Hello World";
 console.log(favoriteQuote);
 // 2. Create a variable that calculates days until the weekend
-const today = new Date();
-const dayOfWeek = today.getDay();
-const daysUntilWeekend = (6 - dayOfWeek + 7) % 7;
+let curDate = new Date();
+let curDay=curDate.getDay();
+
+if(curDay === 0) {
+    console.log("There are 0 days until the weekend");
+}
+else{
+    console.log("will update");
+}
+
+
+let daysUntilWeekend = 6-curDay;
 console.log(`Days until weekend: ${daysUntilWeekend}`);
 // 3. Create a variable that checks if today is a weekday
-const isWeekday = dayOfWeek < 5; // 0-4 are weekdays
-console.log(`Is today a weekday? ${isWeekday}`);
+let curday = new Date().getDay();
+if(curDay<=5){
+    if (curDay===0) console.log("It is Sunday and not a weekday")
+    else console.log("Today is a weekday");
+} 
+else {
+    console.log("It is Saturday and not a weekday");
+}
