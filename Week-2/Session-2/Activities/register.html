@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 2</title>
+</head>
+<body>
+<h2>User Registration</h2>
+<form action="/chris" method="post"> 
+    <label for="name"> Name: </label>
+    <input type="text" id="name" name="name">
+    <br><br>
+    <label for="email"> Email: </label>
+    <input type="email" id="email" name="email">
+    <br><br>
+    <label for="username"> Username: </label>
+    <input type="text" id="username" name="username">
+    <br><br>
+    <label for="password"> Password: </label>
+    <input type="password" id="password" name="password">
+    <br><br>
+    <label for="date"> Date of Birth: </label>
+    <input type="date">
+    <br><br>
+    
+    <p>Gender: </p> <label><input type="radio" name="Female"> Female</label>
+     <label><input type="radio" name="Male"> Male</label>
+     <label><input type="radio" name="Male"> Other</label>
+    <br>
+    <h3>Interests</h3>
+    <label><input type="checkbox" name="music"> Music</label> <br>
+    <label><input type="checkbox" name="sports"> Sports</label> <br>
+    <label><input type="checkbox" name="movies"> Movies</label> 
+    <br><br>
+
+    <label for="countries">Country</label> <br>
+      <select id="countries" name="countries">
+        <option value="usa">United States of America</option>
+        <option value="guatemala">Guatemala</option>
+        <option value="ecuador">Ecuador</option>
+      </select><br><br>
+<h3>Write a short bio below:</h3>
+    <textarea id="bio" name="bio" rows="3" cols="30" maxlength="200"></textarea>
+    <br><br>
+    <button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>
