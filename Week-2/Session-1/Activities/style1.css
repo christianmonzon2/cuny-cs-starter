@@ -1,0 +1,60 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #b9e4e3;
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3 {
+    color: #22384f;
+}
+ul {
+    list-style-type: square;
+    border-style: solid;
+    border-color: #2c3e50;
+}
+
+.sidebar-item {
+    color: #b93a29;
+    margin-bottom: 8px;
+}
+
+/* ID selectors */
+#header {
+    background: #34495e;
+    color: #fff;
+    padding: 20px;
+    
+}
+#footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Combinator selectors */
+nav ul li a {
+    text-decoration: none;
+    color: #34495e;
+    padding: 6px 12px;
+}
+nav ul li a:hover {
+    background: #d1eaff;
+    border-radius: 4px;
+}
+main article ul li {
+    margin-bottom: 5px;
+}
+aside ul li a {
+    font-style: italic;
+}
+
+a:hover, a:focus {
+    color: #e67e22;
+}
+button:hover {
+    background: #27ae60;
+    color: #fff;
+    cursor: pointer;
+
+}
