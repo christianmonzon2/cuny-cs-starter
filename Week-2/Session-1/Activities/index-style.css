@@ -5,3 +5,47 @@ body {
     padding: 20px;
 }
 
+h1 {
+    color: #4a90e2;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #393b3d;
+}
+a {
+    color: #e94e77;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+li {
+    margin-bottom: 5px;
+}
+button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #357ab8;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+    border-style: solid;
+    border-color: #4a90e2;
+    border-width: 2px;
+}
