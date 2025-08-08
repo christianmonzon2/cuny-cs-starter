@@ -1,9 +1,9 @@
 # Week 1 Practicum: JavaScript Data Manipulation Project
 
 ## Project Information
-- **Student Name**: [Your Name]
-- **Project Theme**: [Your chosen theme]
-- **Date**: [Submission Date]
+- **Student Name**: Christian Monzon
+- **Project Theme**: My Album Collection
+- **Date**: August 15, 2025
 
 ## Project Description
 [Provide a brief description of your project and what it does]
