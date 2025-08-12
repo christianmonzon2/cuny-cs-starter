@@ -86,45 +86,45 @@
     </div>
 
     <script>
-        // Task 1: Random Photo
-        const photoBtn = document.getElementById('photo-btn');
-        const photoDisplay = document.getElementById('photo-display');
-        
-        photoBtn.addEventListener('click', function() {
-            // TODO: Use fetch to get a random photo
-            // URL: https://picsum.photos/200/200
-            // For images, you can create an <img> element and set its src
-            
-            // Example structure:
-            // fetch('https://picsum.photos/200/200')
-            //   .then(response => {
-            //     const img = document.createElement('img');
-            //     img.src = response.url;
-            //     img.style.maxWidth = '100%';
-            //     photoDisplay.innerHTML = '';
-            //     photoDisplay.appendChild(img);
-            //   });
-        });
+    // Task 1: Random Photo
+    const photoBtn = document.getElementById('photo-btn');
+    const photoDisplay = document.getElementById('photo-display');
 
-        // Task 2: Blog Post
-        const postBtn = document.getElementById('post-btn');
-        const postDisplay = document.getElementById('post-display');
-        
-        postBtn.addEventListener('click', function() {
-            // TODO: Use fetch to get a blog post
-            // URL: https://jsonplaceholder.typicode.com/posts/1
-            // The response has 'title' and 'body' properties
-            
-            // Example structure:
-            // fetch('https://jsonplaceholder.typicode.com/posts/1')
-            //   .then(response => response.json())
-            //   .then(data => {
-            //     postDisplay.innerHTML = `
-            //       <h4>${data.title}</h4>
-            //       <p>${data.body}</p>
-            //     `;
-            //   });
-        });
-    </script>
+    photoBtn.addEventListener('click', function () {
+        fetch('https://picsum.photos/200/200')
+            .then(response => {
+                const img = document.createElement('img');
+                img.src = response.url; // the API returns a redirect URL
+                img.style.maxWidth = '100%';
+                img.alt = 'Random Photo';
+                photoDisplay.innerHTML = ''; // clear previous
+                photoDisplay.appendChild(img);
+            })
+            .catch(error => {
+                photoDisplay.textContent = '❌ Could not load photo.';
+                console.error(error);
+            });
+    });
+
+    // Task 2: Blog Post
+    const postBtn = document.getElementById('post-btn');
+    const postDisplay = document.getElementById('post-display');
+
+    postBtn.addEventListener('click', function () {
+        fetch('https://jsonplaceholder.typicode.com/posts/1')
+            .then(response => response.json())
+            .then(data => {
+                postDisplay.innerHTML = `
+                    <h4>${data.title}</h4>
+                    <p>${data.body}</p>
+                `;
+            })
+            .catch(error => {
+                postDisplay.textContent = '❌ Could not load blog post.';
+                console.error(error);
+            });
+    });
+</script>
+
 </body>
 </html>

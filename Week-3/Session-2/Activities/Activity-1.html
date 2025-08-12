@@ -84,32 +84,33 @@
     </div>
 
     <script>
+
         // Task 1: Real-time pet welcome
-        // TODO: Get the pet name input and welcome elements
         const petNameInput = document.getElementById('pet-name');
         const petWelcome = document.getElementById('pet-welcome');
-        
-        // TODO: Add input event listener to show welcome message as user types
-        // When user types, show: "Welcome [petName]! 🐾" in the welcome area
+
         petNameInput.addEventListener('input', function() {
-            // Your code here
-            
+            const petName = petNameInput.value.trim();
+            if (petName) {
+                petWelcome.textContent = `Welcome ${petName}! 🐾`;
+            } else {
+                petWelcome.textContent = 'Enter a name to welcome your pet!';
+            }
         });
 
         // Task 2: Adoption form handling
-        // TODO: Get the form and result elements
         const adoptionForm = document.getElementById('adoption-form');
         const adoptionResult = document.getElementById('adoption-result');
-        
-        // TODO: Add submit event listener
-        // When form is submitted:
-        // 1. Prevent page reload with event.preventDefault()
-        // 2. Get the animal from the input
-        // 3. Show "Thank you for wanting to adopt a [animal]!" in the result area
+
         adoptionForm.addEventListener('submit', function(event) {
-            // Your code here
-            
+            event.preventDefault(); // Prevent page reload
+            const animal = document.getElementById('animal-input').value.trim();
+            if (animal) {
+                adoptionResult.textContent = `Thank you for wanting to adopt a ${animal}! ❤️`;
+            } else {
+                adoptionResult.textContent = 'Please enter your favorite animal before submitting.';
+            }
         });
-    </script>
+</script>
 </body>
 </html>

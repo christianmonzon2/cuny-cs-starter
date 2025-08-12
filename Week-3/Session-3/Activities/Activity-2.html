@@ -93,53 +93,48 @@
     </div>
 
     <script>
-        // Task 1: Single Todo Item
-        const todoBtn = document.getElementById('todo-btn');
-        const todoDisplay = document.getElementById('todo-display');
-        
-        todoBtn.addEventListener('click', function() {
-            // TODO: Fetch todo data and display it
-            // URL: https://jsonplaceholder.typicode.com/todos/1
-            // The data has: id, title, completed, userId
-            // Show the title and whether it's completed
-            
-            fetch('https://jsonplaceholder.typicode.com/todos/1')
-                .then(response => response.json())
-                .then(data => {
-                    // TODO: Display the todo information
-                    // Use data.title and data.completed
-                    // Example: "Task: [title] - Status: [completed ? 'Done' : 'Not Done']"
-                    
-                });
-        });
+    // Task 1: Single Todo Item
+    const todoBtn = document.getElementById('todo-btn');
+    const todoDisplay = document.getElementById('todo-display');
 
-        // Task 2: Multiple Albums
-        const albumsBtn = document.getElementById('albums-btn');
-        const albumsDisplay = document.getElementById('albums-display');
-        
-        albumsBtn.addEventListener('click', function() {
-            // TODO: Fetch albums data and display each album
-            // URL: https://jsonplaceholder.typicode.com/albums?_limit=5
-            // This returns an array of album objects
-            // Each album has: id, title, userId
-            
-            fetch('https://jsonplaceholder.typicode.com/albums?_limit=5')
-                .then(response => response.json())
-                .then(albums => {
-                    // TODO: Clear previous results
-                    albumsDisplay.innerHTML = '<h3>Photo Albums:</h3>';
-                    
-                    // TODO: Loop through albums array
-                    // For each album, create a div and show the title
-                    // albums.forEach(album => {
-                    //   const albumDiv = document.createElement('div');
-                    //   albumDiv.className = 'album-item';
-                    //   albumDiv.textContent = album.title;
-                    //   albumsDisplay.appendChild(albumDiv);
-                    // });
-                    
+    todoBtn.addEventListener('click', function () {
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then(data => {
+                const status = data.completed ? '✅ Done' : '❌ Not Done';
+                todoDisplay.innerHTML = `
+                    <strong>Task:</strong> ${data.title} <br>
+                    <strong>Status:</strong> ${status}
+                `;
+            })
+            .catch(error => {
+                todoDisplay.textContent = '❌ Could not load todo item.';
+                console.error(error);
+            });
+    });
+
+    // Task 2: Multiple Albums
+    const albumsBtn = document.getElementById('albums-btn');
+    const albumsDisplay = document.getElementById('albums-display');
+
+    albumsBtn.addEventListener('click', function () {
+        fetch('https://jsonplaceholder.typicode.com/albums?_limit=5')
+            .then(response => response.json())
+            .then(albums => {
+                albumsDisplay.innerHTML = '<h3>Photo Albums:</h3>';
+                albums.forEach(album => {
+                    const albumDiv = document.createElement('div');
+                    albumDiv.className = 'album-item';
+                    albumDiv.textContent = album.title;
+                    albumsDisplay.appendChild(albumDiv);
                 });
-        });
-    </script>
+            })
+            .catch(error => {
+                albumsDisplay.textContent = '❌ Could not load albums.';
+                console.error(error);
+            });
+    });
+</script>
+
 </body>
 </html>
